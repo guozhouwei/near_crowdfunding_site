@@ -133,7 +133,7 @@ async function callmethod_bid(account:Account, number_campagins: number) {
       num_campagins: number_campagins,
     },
     gas: "300000000000000",
-    attachedDeposit: utils.format.parseNearAmount("5"),
+    attachedDeposit: utils.format.parseNearAmount("8"),
   });
 
   const successValue = (outcome.status as FinalExecutionStatus).SuccessValue;
@@ -198,7 +198,7 @@ async function callmethod_getCrowdFunding(account:Account, number_campagins: num
   if (successValue) {
     const valueRaw = Buffer.from(successValue, 'base64');
     const returnedValue = JSON.parse(valueRaw.toString())
-    const campaginStr = "募捐活动编号:" + number_campagins + ",募捐活动名称:" + returnedValue.theme + ", 募捐收款账号:" + returnedValue.receiver + ", 目标募捐金额:" + returnedValue.funding_goal + ", 参与募捐人数:" + returnedValue.number_funders + ", 实际募捐金额:" + returnedValue.total_amount
+    const campaginStr = "募捐活动编号:" + number_campagins + ",募捐活动名称:" + returnedValue.theme + ", 募捐收款账号:" + returnedValue.receiver + ", 目标募捐金额:" + returnedValue.funding_goal + " NEAR, 参与募捐人数:" + returnedValue.number_funders + ", 实际募捐金额:" + returnedValue.total_amount + " yocto (单位：1NEAR = 10^24yoctoNEAR，1NEAR = 10^12Tera)"
     return campaginStr;
   }
   return "募捐活动不存在";
