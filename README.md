@@ -95,6 +95,7 @@ near account import-account using-seed-phrase "${YOUR_SEED_PHRASE}" --seed-phras
 
 ## near-api-js
 ### 执行命令
+todo 我正在学习react.js，所以还没有页面，极速写的此功能，主要为了学习near-api-js使用，代码中还暴露账户私钥，这很业余（测试账户），等我学会react会重构。
 ```shell
 yarn start
 ```
