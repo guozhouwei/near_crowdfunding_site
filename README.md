@@ -12,12 +12,12 @@
 合约代码：https://github.com/guozhouwei/near_crowdfunding_site/blob/main/near_crowdfunding/src/lib.rs  
 near-api-js: https://github.com/guozhouwei/near_crowdfunding_site/blob/main/src/main.ts
 
-
-## 业务逻辑图
+## 合约
+### 业务逻辑图
 ![avatar](https://github.com/guozhouwei/near_crowdfunding/blob/master/images/%E5%86%B3%E7%AD%96%E6%B5%81%E7%A8%8B%E5%9B%BE.png)
 
-## 部署和交互
-### 账户
+### 部署和交互
+#### 账户
 假设你注册了4个测试网账户:
 ```shell
 1. 主账户（同合约部署签名账户）owner123.testnet
@@ -25,13 +25,13 @@ near-api-js: https://github.com/guozhouwei/near_crowdfunding_site/blob/main/src/
 3. 募捐人账户 a.near
 ```
 
-#### 以上账户私钥保存在 legacy keychain 中
+##### 以上账户私钥保存在 legacy keychain 中
 ```shell
 near account import-account using-seed-phrase "${YOUR_SEED_PHRASE}" --seed-phrase-hd-path 'm/44'\''/397'\''/0'\''' network-config testnet
 
 ```
 
-### 编译募捐合约
+#### 编译募捐合约
 1. 进入项目目录
     ```shell
    cd .
@@ -53,7 +53,7 @@ near account import-account using-seed-phrase "${YOUR_SEED_PHRASE}" --seed-phras
    make all
     ```
 
-### 合约交互
+#### 合约交互
 1. 部署并初始化合约
     ```shell
     合约账户：contract1234501.testnet
@@ -89,7 +89,22 @@ near account import-account using-seed-phrase "${YOUR_SEED_PHRASE}" --seed-phras
     ```
     合约浏览器：https://explorer.testnet.near.org/transactions/7rcGezoSa1cxqB7uMzofok9iynxeJ1K2ThLCw7VoG2fh
 
-#### 查看合约所有调用请查看：
+##### 查看合约所有调用请查看：
      https://testnet.nearblocks.io/zh-cn/address/contract1234501.testnet
     
+
+## near-api-js
+### 执行命令
+```shell
+yarn start
+```
+log
+```shell
+▶▶▶▶ 募捐活动编号:36
+▶▶▶▶ 创建募捐活动:'募捐活动编号:36,募捐活动名称:流浪动物救助募捐活动, 募捐收款账号:owner123.testnet, 目标募捐金额:500, 参与募捐人数:0, 实际募捐金额:0'
+▶▶▶▶ '第1位募捐人'
+▶▶▶▶ 捐赠后募捐活动:'募捐活动编号:36,募捐活动名称:流浪动物救助募捐活动, 募捐收款账号:owner123.testnet, 目标募捐金额:500, 参与募捐人数:1, 实际募捐金额:5e+24'
+▶▶▶▶ 募捐活动编码:36, 捐赠人:[ { addr: 'zhouzhou_near.testnet', amount: 5e+24 }, [length]: 1 ]
+```
+
 

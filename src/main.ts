@@ -16,11 +16,11 @@ async function main() {
     
     /* 调用合约创建募捐活动 */
     const number_campagins = await callmethod_newCampaign(account, "流浪动物救助募捐活动", 500);
-    console.log("▶▶▶▶募捐活动编号:%d", number_campagins);
+    console.log("▶▶▶▶ 募捐活动编号:%d", number_campagins);
 
     /** 查看募捐活动信息 */
     const campaginStr = await callmethod_getCrowdFunding(account, number_campagins);
-    console.log("▶▶▶▶创建募捐活动:%o", campaginStr);
+    console.log("▶▶▶▶ 创建募捐活动:%o", campaginStr);
 
     /** 募捐参与人 */
     //募捐人信息 zhouzhou_near.testnet
@@ -28,15 +28,15 @@ async function main() {
 
     /** 募捐 */
     const number_funders = await callmethod_bid(account_supply, number_campagins);
-    console.log("▶▶▶▶%o", number_funders);
+    console.log("▶▶▶▶ %o", number_funders);
 
     /** 查看募捐活动信息 */
     const campaginBid = await callmethod_getCrowdFunding(account, number_campagins);
-    console.log("▶▶▶▶捐赠后募捐活动:%o", campaginBid);                                
+    console.log("▶▶▶▶ 捐赠后募捐活动:%o", campaginBid);                                
 
     /** 查看参与募捐活动人员信息列表 */
     const funders = await callmethod_getFunders(account, number_campagins);
-    console.log("▶▶▶▶募捐活动编码:%o, 捐赠人:%o", number_campagins, funders); 
+    console.log("▶▶▶▶ 募捐活动编码:%o, 捐赠人:%o", number_campagins, funders); 
 }
 
 main().catch(console.log)
