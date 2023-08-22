@@ -55,56 +55,43 @@ near account import-account using-seed-phrase "${YOUR_SEED_PHRASE}" --seed-phras
 
 #### 合约交互
 1. 部署并初始化合约  
-    ● 合约账户：contract1234501.testnet  
-    ● near contract deploy contract1234501.testnet use-file ./res/contract.wasm with-init-call init json-args '{"owner_id":"owner123.testnet"}' prepaid-gas '100.000 TeraGas' attached-deposit '0 NEAR' network-config testnet sign-with-keychain send  
-    ● 合约浏览器：https://explorer.testnet.near.org/transactions/FFAB7bzLQsyyGbUn5XMZTLWN4rvbJA1npXHjuuzPmj6H  
+    ➔ 合约账户：contract1234501.testnet  
+    ➔ near contract deploy contract1234501.testnet use-file ./res/contract.wasm with-init-call init json-args '{"owner_id":"owner123.testnet"}' prepaid-gas '100.000 TeraGas' attached-deposit '0 NEAR' network-config testnet sign-with-keychain send  
+    ➔ 合约浏览器：https://explorer.testnet.near.org/transactions/FFAB7bzLQsyyGbUn5XMZTLWN4rvbJA1npXHjuuzPmj6H  
 
 
-2. 调用 newCampaign 方法，创建募捐活动
-    ```shell
-    募捐活动接收账户：owner123.testnet
-    near contract call-function as-transaction contract1234501.testnet newCampaign json-args '{"theme":"涿州水灾募捐活动","receiver":"owner123.testnet","number_funders":0,"funding_goal":100}' prepaid-gas '100.000 TeraGas' attached-deposit '0 NEAR' sign-as owner123.testnet network-config testnet sign-with-keychain send
-    ```
-    合约浏览器：https://explorer.testnet.near.org/transactions/A2ZVJi8ihQrAtLY9pQUFFALdJWwC2LDbFBJnbv9xoXv4
-
-3. 调用 get_crowdFunding_by_num_campagins 方法，查看创建的募捐活动
-    ```shell
-    募捐活动编号：1
-    near contract call-function as-transaction contract1234501.testnet get_crowdFunding_by_num_campagins json-args '{"num_campagins":1}' prepaid-gas '100.000 TeraGas' attached-deposit '0 NEAR' sign-as owner123.testnet network-config testnet sign-with-keychain send
-    ```
-    合约浏览器：https://explorer.testnet.near.org/transactions/BA9Rj1EM1Q2fLMmFpbagJd8YiTUCa7KbMb8D11ujEr8H
-
-4. 调用 bid 方法, 参与募捐活动
-    ```shell
-    参与募捐活动账户：zhouzhou_near.testnet
-    发起转账 from： zhouzhou_near.testnet to ：contract1234501.testnet ，NEAR 88, 
-    near contract call-function as-transaction contract1234501.testnet bid json-args '{"num_campagins":1}' prepaid-gas '100.000 TeraGas' attached-deposit '88 NEAR' sign-as zhouzhou_near.testnet network-config testnet sign-with-keychain send
-    ```
-    合约浏览器：https://explorer.testnet.near.org/transactions/F11L4erVatpe1JnKUk3GaXMrxN1aJEUvXKh3KaEx2h4g
-
-5. 调用 get_funders_by_num_campagins 方法, 查看活动募捐人列表
-    ```shell
-    near contract call-function as-transaction contract1234501.testnet get_funders_by_num_campagins json-args '{"num_campagins":1}' prepaid-gas '100.000 TeraGas' attached-deposit '0 NEAR' sign-as owner123.testnet network-config testnet sign-with-keychain send
-    ```
-    合约浏览器：https://explorer.testnet.near.org/transactions/7rcGezoSa1cxqB7uMzofok9iynxeJ1K2ThLCw7VoG2fh
-
-##### 查看合约所有调用请查看：
-     https://testnet.nearblocks.io/zh-cn/address/contract1234501.testnet
+2. 调用 newCampaign 方法，创建募捐活动  
+    ➔ 募捐活动接收账户：owner123.testnet  
+    ➔ near contract call-function as-transaction contract1234501.testnet newCampaign json-args '{"theme":"涿州水灾募捐活动","receiver":"owner123.testnet","number_funders":0,"funding_goal":100}' prepaid-gas '100.000 TeraGas' attached-deposit '0 NEAR' sign-as owner123.testnet network-config testnet sign-with-keychain send  
+    ➔ 合约浏览器：https://explorer.testnet.near.org/transactions/A2ZVJi8ihQrAtLY9pQUFFALdJWwC2LDbFBJnbv9xoXv4  
     
+3. 调用 get_crowdFunding_by_num_campagins 方法，查看创建的募捐活动  
+    ➔ 募捐活动编号：1  
+    ➔ near contract call-function as-transaction contract1234501.testnet get_crowdFunding_by_num_campagins json-args '{"num_campagins":1}' prepaid-gas '100.000 TeraGas' attached-deposit '0 NEAR' sign-as owner123.testnet network-config testnet sign-with-keychain send  
+    ➔ 合约浏览器：https://explorer.testnet.near.org/transactions/BA9Rj1EM1Q2fLMmFpbagJd8YiTUCa7KbMb8D11ujEr8H  
+    
+4. 调用 bid 方法, 参与募捐活动  
+    ➔ 参与募捐活动账户：zhouzhou_near.testnet  
+    ➔ 发起转账 from： zhouzhou_near.testnet to ：contract1234501.testnet ，NEAR 88, 
+    near contract call-function as-transaction contract1234501.testnet bid json-args '{"num_campagins":1}' prepaid-gas '100.000 TeraGas' attached-deposit '88 NEAR' sign-as zhouzhou_near.testnet network-config testnet sign-with-keychain send  
+    ➔ 合约浏览器：https://explorer.testnet.near.org/transactions/F11L4erVatpe1JnKUk3GaXMrxN1aJEUvXKh3KaEx2h4g  
+    
+5. 调用 get_funders_by_num_campagins 方法, 查看活动募捐人列表  
+    ➔ near contract call-function as-transaction contract1234501.testnet get_funders_by_num_campagins json-args '{"num_campagins":1}' prepaid-gas '100.000 TeraGas' attached-deposit '0 NEAR' sign-as owner123.testnet network-config testnet sign-with-keychain send  
+    ➔ 合约浏览器：https://explorer.testnet.near.org/transactions/7rcGezoSa1cxqB7uMzofok9iynxeJ1K2ThLCw7VoG2fh  
+    
+##### 合约所有交易情况列表：  
+    ➔ https://testnet.nearblocks.io/zh-cn/address/contract1234501.testnet  
+        
 
 ## near-api-js
 ### 执行命令
-todo 我正在学习react.js，所以还没有页面，极速写的此功能，主要为了学习near-api-js使用，代码中还暴露账户私钥，这很业余（测试账户），等我学会react会重构。
 ```shell
 yarn start
 ```
 log
-```shell
-▶▶▶▶ 募捐活动编号:40
-▶▶▶▶ 创建募捐活动:'募捐活动编号:40,募捐活动名称:流浪动物救助募捐活动, 募捐收款账号:owner123.testnet, 目标募捐金额:500 NEAR, 参与募捐人数:0, 实际募捐金额:0 yocto (单位：1NEAR = 10^24yoctoNEAR，1NEAR = 10^12Tera)'
-▶▶▶▶ '第1位募捐人'
-▶▶▶▶ 捐赠后募捐活动:'募捐活动编号:40,募捐活动名称:流浪动物救助募捐活动, 募捐收款账号:owner123.testnet, 目标募捐金额:500 NEAR, 参与募捐人数:1, 实际募捐金额:8e+24 yocto (单位：1NEAR = 10^24yoctoNEAR，1NEAR = 10^12Tera)'
-▶▶▶▶ 募捐活动编码:40, 捐赠人:[ { addr: 'zhouzhou_near.testnet', amount: 8e+24 }, [length]: 1 
-```
-
-
+▶▶▶▶ 募捐活动编号:40  
+▶▶▶▶ 创建募捐活动:'募捐活动编号:40,募捐活动名称:流浪动物救助募捐活动, 募捐收款账号:owner123.testnet, 目标募捐金额:500 NEAR, 参与募捐人数:0, 实际募捐金额:0 yocto (单位：1NEAR = 10^24yoctoNEAR，1NEAR = 10^12Tera)'  
+▶▶▶▶ '第1位募捐人'  
+▶▶▶▶ 捐赠后募捐活动:'募捐活动编号:40,募捐活动名称:流浪动物救助募捐活动, 募捐收款账号:owner123.testnet, 目标募捐金额:500 NEAR, 参与募捐人数:1, 实际募捐金额:8e+24 yocto (单位：1NEAR = 10^24yoctoNEAR，1NEAR = 10^12Tera)'  
+▶▶▶▶ 募捐活动编码:40, 捐赠人:[ { addr: 'zhouzhou_near.testnet', amount: 8e+24 }, [length]: 1   
