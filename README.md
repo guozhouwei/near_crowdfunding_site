@@ -5,7 +5,7 @@
 ```shell
 1、发布募捐活动，募集near币
 2、用户参与募捐活动，向募捐指定账户转入NEAR
-2、对捐赠的用户赠送纪念NFT
+3、展示募捐活动详情：参与募捐的人和当前募捐到的NEAR
 ```
 
 ## 代码仓库
@@ -21,8 +21,8 @@ near-api-js: https://github.com/guozhouwei/near_crowdfunding_site/blob/main/src/
 假设你注册了4个测试网账户:
 ```shell
 1. 主账户（同合约部署签名账户）owner123.testnet
-2. 合约账户 contract12345.testnet
-3. 募捐人账户 a.near
+2. 合约账户 contract1234501.testnet
+3. 募捐人账户 zhouzhou_near.testnet
 ```
 
 ##### 以上账户私钥保存在 legacy keychain 中
