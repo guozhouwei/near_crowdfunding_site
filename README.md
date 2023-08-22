@@ -89,7 +89,7 @@ near account import-account using-seed-phrase "${YOUR_SEED_PHRASE}" --seed-phras
 ```shell
 yarn start
 ```
-log
+### 日志log  
 ▶▶▶▶ 募捐活动编号:40  
 ▶▶▶▶ 创建募捐活动:'募捐活动编号:40,募捐活动名称:流浪动物救助募捐活动, 募捐收款账号:owner123.testnet, 目标募捐金额:500 NEAR, 参与募捐人数:0, 实际募捐金额:0 yocto (单位：1NEAR = 10^24yoctoNEAR，1NEAR = 10^12Tera)'  
 ▶▶▶▶ '第1位募捐人'  
